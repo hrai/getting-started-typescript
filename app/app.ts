@@ -4,6 +4,7 @@ function startGame() {
   const playerName: string = 'Avril';
   logPlayer(playerName);
   unionTypes();
+  typeAssertions();
 
   var messagesElement = document.getElementById('messages');
   messagesElement!.innerText = 'Welcome to MultiMath! Starting new game...';  
@@ -21,6 +22,13 @@ function unionTypes() {
   console.log(str);
   console.log(nullableStr);
   console.log(undefinedString);
+}
+
+function typeAssertions() {
+  let value: any = 5;
+  let str:string=(value as number).toFixed(4);
+
+  console.log(str);
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
