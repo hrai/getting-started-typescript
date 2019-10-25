@@ -42,7 +42,6 @@ let myResult: Result = {
   factor: 7
 };
 
-let player: Person = {
-  name: 'Ben',
-  formatName: () => 'Benj'
-}
+let player: Person = new Player();
+player.name= 'Ben';
+console.log(player.formatName);
