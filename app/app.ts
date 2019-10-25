@@ -33,3 +33,16 @@ function typeAssertions() {
 }
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
+
+
+let myResult: Result = {
+  playerName: 'Marie',
+  score: 5,
+  problemCount: 5,
+  factor: 7
+};
+
+let player: Person = {
+  name: 'Ben',
+  formatName: () => 'Benj'
+}
