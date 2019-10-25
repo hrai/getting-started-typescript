@@ -1,7 +1,8 @@
 function startGame() {
   // starting a new game
 
-  const playerName: string = 'Avril';
+  let playerName: string; 
+  playerName = 'Avril';
   logPlayer(playerName);
   unionTypes();
   typeAssertions();
