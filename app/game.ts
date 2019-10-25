@@ -50,7 +50,7 @@ class Game {
     };
 
     // add the result and update the scoreboard
-    this.scoreboard.addResult(result);
+    this.scoreboard.addResults(result);
     this.scoreboard.updateScoreboard();
 
     // disable the calculate score button

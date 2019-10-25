@@ -5,6 +5,6 @@
         "outFile": "../js/app.js"
     },
     "files": [
-        "./app.ts"
+        "app.ts"
     ]
 }

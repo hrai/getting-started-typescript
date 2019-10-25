@@ -1,51 +1,22 @@
 /// <reference path="player.ts" />
-/// <reference path="result.ts" />
+/// <reference path="game.ts" />
+
+let newGame: Game;
 
 
-function startGame() {
-  // starting a new game
+// add click handler to the start game button
+document.getElementById('startGame')!.addEventListener('click', () => {
+  const player: Player = new Player();
+  player.name = Utility.getInputValue('playername');
 
-  let playerName: string; 
-  playerName = 'Avril';
-  logPlayer(playerName);
-  unionTypes();
-  typeAssertions();
+  const problemCount: number = Number(Utility.getInputValue('problemCount'));
+  const factor: number = Number(Utility.getInputValue('factor'));
 
-  var messagesElement = document.getElementById('messages');
-  messagesElement!.innerText = 'Welcome to MultiMath! Starting new game...';  
-}
+  newGame = new Game(player, problemCount, factor);
+  newGame.displayGame();
+});
 
-function logPlayer(name:string) {
-  console.log(`New game starting for : ${name}`);
-}
-
-function unionTypes() {
-  let str: string = 'test';
-  let nullableStr: string | null = null;
-  let undefinedString: string | undefined = undefined;
-
-  console.log(str);
-  console.log(nullableStr);
-  console.log(undefinedString);
-}
-
-function typeAssertions() {
-  let value: any = 5;
-  let str:string=(value as number).toFixed(4);
-
-  console.log(str);
-}
-
-document.getElementById('startGame')!.addEventListener('click', startGame);
-
-
-let myResult: Result = {
-  playerName: 'Marie',
-  score: 5,
-  problemCount: 5,
-  factor: 7
-};
-
-let player: Player = new Player();
-player.name= 'Ben';
-console.log(player.formatName());
+// add click handler to the calculate score button
+document.getElementById('calculate')!.addEventListener('click', () => {
+  newGame.calculateScore();
+});
