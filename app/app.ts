@@ -1,3 +1,7 @@
+/// <reference path="player.ts" />
+/// <reference path="result.ts" />
+
+
 function startGame() {
   // starting a new game
 
@@ -42,6 +46,6 @@ let myResult: Result = {
   factor: 7
 };
 
-let player: Person = new Player();
+let player: Player = new Player();
 player.name= 'Ben';
-console.log(player.formatName);
+console.log(player.formatName());

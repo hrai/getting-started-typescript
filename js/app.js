@@ -1,4 +1,12 @@
 "use strict";
+var Player = (function () {
+    function Player() {
+    }
+    Player.prototype.formatName = function () {
+        return this.name.toUpperCase();
+    };
+    return Player;
+}());
 function startGame() {
     var playerName;
     playerName = 'Avril';
@@ -33,5 +41,5 @@ var myResult = {
 };
 var player = new Player();
 player.name = 'Ben';
-console.log(player.formatName);
+console.log(player.formatName());
 //# sourceMappingURL=app.js.map
